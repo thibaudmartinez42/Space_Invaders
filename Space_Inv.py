@@ -1,5 +1,5 @@
 from LibS import *
 
-LibS.jouer()
+jouer()
 
 
