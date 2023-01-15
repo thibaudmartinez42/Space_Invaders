@@ -2,10 +2,10 @@ import tkinter as tk
 from random import randint
 from time import time
 from entitées.protection import *
-from player import *
-from world import *
-from __init__ import *
-from alien import *
+from entitées.player import *
+from entitées.world import *
+from entitées.__init__ import *
+from entitées.alien import *
 
 hauteur=480
 largeur=640

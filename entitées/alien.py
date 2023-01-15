@@ -1,18 +1,12 @@
 import tkinter as tk            
 from random import randint
 from time import time
-from entitées.proteWIDTH = 700
-HEIGHT = 900
-X1=10
-X2 =20
-y=40
-dy=65
-dx=10
 
-ction import *
-from player import *
-from world import *
-from __init__ import *
+
+from entitées.protection import *
+from entitées.player import *
+from entitées.world import *
+from entitées.__init__ import *
 from entitées.tir_alien import *
 
 

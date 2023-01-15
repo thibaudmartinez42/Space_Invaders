@@ -1,6 +1,49 @@
 import tkinter as tk            
 from random import randint
 from time import time
+Partie_en_cours=False
+Partie_Perdu=True
+ViesInit=300
+
+#Canevas
+hauteur=480
+largeur=640
+
+#vaisseau
+largeur_vaisseau=30
+hauteur_vaisseau=32
+posX=largeur/2
+posY=hauteur-hauteur_vaisseau-5
+
+#Aliens
+largeur_alien=22      
+hauteur_alien=16
+ecart_alien=10
+hauteur_alien_ligne1=50
+nbre_alien_par_ligne=15
+descente_alien=10
+VitesseDeplacement=10
+VitesseAlien=0.5
+AccelerationAlien=0.05
+
+#Protections
+nbre_protections=4
+posY_protections=posY-35
+largeur_protections=1.5*largeur_vaisseau
+hauteur_protections=15
+resistance_protections=5
+
+#tirs allies et ennemies
+VitesseTir= 1
+tps_entre_tir_alien=50  #rester au dessus de 50 pour eviter de planter
+Tirs=[]
+TempsTir=0
+TirsAlien=[]
+TempsEntreTirs=1
+
+#Score et points
+Score=0
+PointsAlien=30
 
 def MouvementAlien():
     global ennemie
@@ -124,10 +167,10 @@ def Points(pts):
 
 mw=tk.Tk()
 
-ImageVaisseau=tk.PhotoImage(file='Space-invaders-Python-master\spaceship.gif')
-ImageDestroy=tk.PhotoImage(file='Space-invaders-Python-master\spaceshipdestroy.gif')
-ImageAlien=tk.PhotoImage(file='Space-invaders-Python-master\invader.gif')
-ImageFond=tk.PhotoImage(file='Space-invaders-Python-master\space.gif')
+ImageVaisseau=tk.PhotoImage(file='spaceship.gif')
+ImageDestroy=tk.PhotoImage(file='spaceshipdestroy.gif')
+ImageAlien=tk.PhotoImage(file='invader.gif')
+ImageFond=tk.PhotoImage(file='space.gif')
 
 score=tk.Label(mw,text='Score: 0')
 score.grid(row=1,column=1)

@@ -1,7 +1,13 @@
-
-import tkinter as tk
+import tkinter as tk            
 from random import randint
 from time import time
+
+
+from entitées.protection import *
+from entitées.alien import *
+from entitées.world import *
+from entitées.__init__ import *
+from entitées.tir_alien import *
 
 
 
