@@ -1,3 +1,0 @@
-from LibS import *
-jouer()
-
