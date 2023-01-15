@@ -1,34 +1,48 @@
 from player import *
 from alien import *
 
-class world:
-    player_coords_x=250
-    player_coords_y=700
-    player_height=200
-    player_width=100
-    alien_coords_x=10
-    alien_coords_y=40
-    alien_height=30
-    alien_width=15
+import tkinter as tk            
+from random import randint
+from time import time
 
+hauteur=480
+largeur=640
+largeur_alien=22      
+hauteur_alien=16
+ecart_alien=10
+hauteur_alien_ligne1=50
+nbre_alien_par_ligne=15
+descente_alien=10
+VitesseDeplacement=10
+VitesseAlien=0.5
+AccelerationAlien=0.05
+largeur_vaisseau=30
+hauteur_vaisseau=32
+posX=largeur/2
+posY=hauteur-hauteur_vaisseau-5
+VitesseTir= 1
+tps_entre_tir_alien=50
+TempsTir=0
+TirsAlien=[]
+largeur_protections=1.5*largeur_vaisseau
 
-    def __init__(self,canevas):
-        self.init_world(canevas)
-
-    def init_world(self,canevas):
-        p = Player(
-            self.player_coords_x,
-            self.player_coords_y,
-            self.player_width,
-            self.player_height
-        )
-        a = alien(
-            self.alien_coords_x,
-            self.alien_coords_y,
-            self.alien_width,
-            self.alien_height
-        )
-        p.first_display_player(canevas)
-        self.p=p
-        a.first_display_alien(canevas)
-        self.a=a
+class Tir:
+    
+    Compteur=0
+    def __init__(self):
+        self.x=vaisseau.x
+        self.y=vaisseau.y
+        self.apparence=canevas.create_line(self.x , self.y-4 , self.x ,\
+        self.y , fill='white')
+        self.encours=True
+        Tir.Compteur+=1
+    
+    def Affichage(self):
+        canevas.coords(self.apparence , self.x , self.y-4 , self.x , self.y)
+    
+    def Deplacement(self):
+        if self.encours:
+            self.y-=VitesseTir
+            self.Affichage()
+            self.FinTir()
+            mw.after(5,self.Deplacement)
