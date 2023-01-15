@@ -51,24 +51,7 @@ TempsEntreTirs=1
 Score=0
 PointsAlien=30
 
-def MouvementAlien():
-    global ennemie
-    if Partie_en_cours:
-        L=[i.vivant for i in ennemie]
-        if True in L:
-            i=L.index(True)
-            L.reverse()
-            j=L.index(True)
-            if (ennemie[-j-1].x+largeur_alien>=largeur and Alien.dir==1) or\
-            (ennemie[i].x-largeur_alien<=0 and Alien.dir==-1):
-                Alien.dir*=-1
-                Alien.y+=descente_alien
-                if Alien.y+hauteur_alien/2>=Protections.y:
-                    PartiePerdue()
-            for i in ennemie:
-                i.x+=Alien.vitesse*Alien.dir
-                i.Affichage()  
-            mw.after(5,MouvementAlien)
+
 
 def DelTirs():
     for i in Tirs:

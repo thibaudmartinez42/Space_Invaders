@@ -1,12 +1,14 @@
 import tkinter as tk            
 from random import randint
 from time import time
+from __init__ import *
 
 
 
 
 
-
+Partie_en_cours=False
+Partie_Perdu=True
 largeur_alien=22      
 hauteur_alien=16
 ecart_alien=10
@@ -53,3 +55,21 @@ class Alien:
         self.X2=self.X2+self.dx
         self.Canevas.coords(self.alien,self.X1,self.y,self.X2,self.dy)
         self.w.after(100,self.mouvement_alien)
+    def MouvementAlien():
+        global ennemie
+        if Partie_en_cours:
+            L=[i.vivant for i in ennemie]
+            if True in L:
+                i=L.index(True)
+                L.reverse()
+                j=L.index(True)
+                if (ennemie[-j-1].x+largeur_alien>=largeur and Alien.dir==1) or\
+                (ennemie[i].x-largeur_alien<=0 and Alien.dir==-1):
+                    Alien.dir*=-1
+                    Alien.y+=descente_alien
+                    if Alien.y+hauteur_alien/2>=Protections.y:
+                        PartiePerdue()
+                for i in ennemie:
+                    i.x+=Alien.vitesse*Alien.dir
+                    i.Affichage()  
+                mw.after(5,MouvementAlien)

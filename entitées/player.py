@@ -1,6 +1,12 @@
 import tkinter as tk            
 from random import randint
 from time import time
+from protection import *
+from player import *
+from world import *
+from __init__ import *
+from alien import *
+from tir import *
 
 
 
