@@ -1,12 +1,11 @@
 import tkinter as tk            
 from random import randint
 from time import time
-from protection import Protections
-from alien import Alien
-from world import Tir
-from tir_alien import TirAlien
-from player import Spaceship
-
+from protection import *
+from player import *
+from world import *
+from alien import *
+from tir_alien import *
 
 Partie_en_cours=False
 Partie_Perdu=True

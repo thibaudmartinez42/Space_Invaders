@@ -1,3 +1,5 @@
+from player import *
+from alien import *
 
 import tkinter as tk            
 from random import randint
