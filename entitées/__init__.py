@@ -1,6 +1,12 @@
 import tkinter as tk            
 from random import randint
 from time import time
+from protection import *
+from player import *
+from world import *
+from alien import *
+from tir_alien import *
+
 Partie_en_cours=False
 Partie_Perdu=True
 ViesInit=300
