@@ -1,6 +1,7 @@
 import tkinter as tk            
 from random import randint
 from time import time
+<<<<<<< HEAD
 from protection import *
 from player import *
 from world import *
@@ -8,6 +9,9 @@ from __init__ import *
 from alien import *
 from tir import *
 
+=======
+from tkinter import *
+>>>>>>> 8cede70a3f536c4b07415736358d665fa623de6b
 
 
 
@@ -31,7 +35,7 @@ class Spaceship:
 
         self.x=posX
         self.y=posY
-        self.apparence=canevas.create_image(self.x,self.y,anchor='center',image=ImageVaisseau)
+        self.apparence=Canvas.create_image(self.x,self.y,anchor='center',image=ImageVaisseau)
 
 
     def deplacement(self,dir):
@@ -42,12 +46,13 @@ class Spaceship:
         self.Affichage()
         
     def Affichage(self):
-        canevas.coords(self.apparence,self.x,self.y)
+        Canvas.coords(self.apparence,self.x,self.y)
         
         
     def ViePerdue(self):
-        canevas.itemconfig(self.apparence,image=ImageDestroy)
+        Canvas.itemconfig(self.apparence,image=ImageDestroy)
         mw.after(500,self.RetourApparenceNormale)
         
     def RetourApparenceNormale(self):
-        canevas.itemconfig(self.apparence,image=ImageVaisseau)
+        Canvas.itemconfig(self.apparence,image=ImageVaisseau)
+
