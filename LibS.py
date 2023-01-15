@@ -82,8 +82,8 @@ class aliens :
         self.y2 = 65
 
     def creer_alien(self):
-        for i in Nb_Alien
-        Canevas.create_rectangle(self.x1,self.y1,self.x2,self.y2,fill='green')
+        for i in Nb_Alien :
+            Canevas.create_rectangle(self.x1,self.y1,self.x2,self.y2,fill='green')
 
     def mouvement_alien(self):
     
