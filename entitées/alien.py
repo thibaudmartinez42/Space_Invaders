@@ -2,9 +2,7 @@ import tkinter as tk
 from random import randint
 from time import time
 
-
-
-
+from tkinter import *
 
 
 largeur_alien=22      
@@ -30,11 +28,11 @@ class Alien:
 
     def Creation(self):
         #self.apparence=canevas.create_rectangle(self.x-largeur_alien/2,Alien.y-hauteur_alien/2,self.x+largeur_alien/2,Alien.y+hauteur_alien/2,width=2,outline='white')
-        self.apparence=canevas.create_image(self.x,self.y,anchor='nw',image=ImageAlien)
+        self.apparence=Canvas.create_image(self.x,self.y,anchor='nw',image=ImageAlien)
 
     def Affichage(self):
         #canevas.coords(self.apparence , self.x-largeur_alien/2 ,Alien.y-hauteur_alien/2 , self.x+largeur_alien/2 ,Alien.y+hauteur_alien/2)
-        canevas.coords(self.apparence,self.x,self.y)
+        Canvas.coords(self.apparence,self.x,self.y)
 
     def mouvement_alien(self):
     

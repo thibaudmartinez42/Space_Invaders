@@ -1,0 +1,5 @@
+from LibS import *
+
+jouer()
+
+

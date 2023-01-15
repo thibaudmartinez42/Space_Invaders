@@ -6,6 +6,7 @@ from player import *
 from world import *
 from __init__ import *
 from alien import *
+from tkinter import *
 
 hauteur=480
 largeur=640

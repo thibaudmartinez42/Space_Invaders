@@ -2,6 +2,7 @@ import tkinter as tk
 from random import randint
 from time import time
 from __init__ import *
+from tkinter import *
 
 largeur=640
 hauteur=480
