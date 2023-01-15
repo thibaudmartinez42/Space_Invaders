@@ -1,6 +1,20 @@
 import tkinter as tk            
 from random import randint
 from time import time
+from __init__ import *
+
+largeur=640
+hauteur=480
+
+largeur_vaisseau=30
+hauteur_vaisseau=32
+posX=largeur/2
+posY=hauteur-hauteur_vaisseau-5
+nbre_protections=4
+posY_protections=posY-35
+largeur_protections=1.5*largeur_vaisseau
+hauteur_protections=15
+resistance_protections=5
 
 class Protections:
     Compteur=0

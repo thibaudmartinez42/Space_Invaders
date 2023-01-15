@@ -1,5 +1,5 @@
-from entitées.player import *
-from entitées.alien import *
+from player import *
+from alien import *
 
 class world:
     player_coords_x=250
