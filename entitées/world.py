@@ -4,6 +4,7 @@ from alien import *
 import tkinter as tk            
 from random import randint
 from time import time
+from tkinter import *
 
 hauteur=480
 largeur=640
@@ -32,13 +33,13 @@ class Tir:
     def __init__(self):
         self.x=vaisseau.x
         self.y=vaisseau.y
-        self.apparence=canevas.create_line(self.x , self.y-4 , self.x ,\
+        self.apparence=Canvas.create_line(self.x , self.y-4 , self.x ,\
         self.y , fill='white')
         self.encours=True
         Tir.Compteur+=1
     
     def Affichage(self):
-        canevas.coords(self.apparence , self.x , self.y-4 , self.x , self.y)
+        Canvas.coords(self.apparence , self.x , self.y-4 , self.x , self.y)
     
     def Deplacement(self):
         if self.encours:
