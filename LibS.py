@@ -1,5 +1,6 @@
 
 from tkinter import *
+import time
 
 class BehaviorMng:
     WIDTH = 700
@@ -26,10 +27,20 @@ class BehaviorMng:
     
     def creer_vaisseau(self):
         self.Canevas.create_rectangle(450,800,250,700,fill='black')
-    def Envoyer_Proj(self,event):
-        self.Canevas.create_oval(345,695,355,685,fill='yellow')
+    def creer_Proj(self,event):
+        self.proj = self.Canevas.create_oval(345,695,355,685,fill='yellow')
+        self.Envoyer_Proj(self)
+    def Envoyer_Proj(self):
+        y = self.Canevas.coords(self.proj)
+        y[1]= y[3]
+        y[3] =y[1]+10
+        self.Canevas.coords(self.proj,y[0],y[1],y[2],y[3])
+        self.w.after(100, self.Envoyer_Proj)
+
+
+            
     def creer_alien(self):
-        self.Canevas.create_rectangle(self.x,self.y,self.dx,self.dy,fill='green')
+        self.Canevas.create_rectangle(self.X1,self.y,self.X2,self.dy,fill='green')
     
     def mouvement_alien(self):
     
