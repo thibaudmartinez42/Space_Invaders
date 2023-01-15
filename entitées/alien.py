@@ -1,7 +1,15 @@
 import tkinter as tk            
 from random import randint
 from time import time
-from entitées.protection import *
+from entitées.proteWIDTH = 700
+HEIGHT = 900
+X1=10
+X2 =20
+y=40
+dy=65
+dx=10
+
+ction import *
 from player import *
 from world import *
 from __init__ import *
@@ -29,7 +37,7 @@ class Alien:
         Alien.y=hauteur_alien_ligne1
         Alien.dir=1
         Alien.vitesse=VitesseAlien
-    
+
     def Creation(self):
         #self.apparence=canevas.create_rectangle(self.x-largeur_alien/2,Alien.y-hauteur_alien/2,self.x+largeur_alien/2,Alien.y+hauteur_alien/2,width=2,outline='white')
         self.apparence=canevas.create_image(self.x,self.y,anchor='nw',image=ImageAlien)
@@ -37,3 +45,21 @@ class Alien:
     def Affichage(self):
         #canevas.coords(self.apparence , self.x-largeur_alien/2 ,Alien.y-hauteur_alien/2 , self.x+largeur_alien/2 ,Alien.y+hauteur_alien/2)
         canevas.coords(self.apparence,self.x,self.y)
+
+    def mouvement_alien(self):
+    
+        if self.dx == abs(self.dx) :
+            if self.X2 >= self.WIDTH:
+                self.dx = -10
+                self.y = self.y+10
+                self.dy = self.dy+10
+        if self.dx == -abs(self.dx) :
+            if self.X1 <= 0:
+                self.dx = 10
+                self.y = self.y+10
+                self.dy = self.dy+10
+
+        self.X1=self.X1+self.dx
+        self.X2=self.X2+self.dx
+        self.Canevas.coords(self.alien,self.X1,self.y,self.X2,self.dy)
+        self.w.after(100,self.mouvement_alien)
